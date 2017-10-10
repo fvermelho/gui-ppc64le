@@ -1,0 +1,784 @@
+// #16a085ff
+$online: #16a085;
+$offline: #f85252;
+$disabled: $silver;
+$entry-default: $default-blue;
+$status: #0c343d;
+
+.lst-icon {
+  width:  2.1em;
+  height: 2.1em;
+  margin: 5% 0.8em;
+  /*left: 10px;*/
+  padding: 0.6em  !important;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.3em;
+}
+
+.lst-fa-icon {
+  /*font-size: 16px !important;*/
+  background: #2a7f88;
+  border-radius: 3em;
+  color: white  !important;
+}
+
+.lst-title {
+  font-size: 115%;
+  position: relative;
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 100%;
+    margin-top: 0.5em;
+  }
+}
+
+.lst-wrapper {
+  padding: 0 6% !important;
+}
+
+.lst-entry {
+  border-color: black;
+  padding: 10px 5px;
+  transition: 0.3s;
+  padding: 0.5em !important;
+
+  &.detail {
+    position: relative;
+    left: -2% !important;
+    width: 104% !important;
+  }
+}
+
+.input-field.large {
+  margin-top: 1.5em;
+
+  label {
+    font-size: 1.5em;
+
+    &.active {
+      font-size: 1.2em;
+    }
+  }
+
+  input {
+    font-size: 1.5em;
+    height: 3em;
+  }
+}
+
+.device {
+  &.form {
+    background-color: #fff;
+  }
+
+  .img {
+    padding: 1.5em;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .detail-header {
+    background-color: #f3f3f3;
+    // z-index: -1;
+    // position: relative;
+  }
+
+  .table {
+    .row {
+      margin: 0;
+    }
+
+    color: $black;
+
+    .header {
+      border-bottom: solid 2px $black;
+      font-weight: bold;
+    }
+
+    .body {
+
+    }
+  }
+
+  .action-container {
+    text-align: center;
+  }
+  .action {
+    margin-left: 0.3em;
+  }
+
+  .title-row {
+    margin-bottom: 0.2em;
+
+    .btn {
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+      height: auto;
+
+    }
+  }
+
+
+  .title {
+    color: $dark-silver;
+    font-size: 1.6em;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .error {
+    color: $red;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .inner.shadow {
+    height: 100%;
+    background-color: #f3f3f3;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.14) inset;
+    border-radius: 8px;
+    padding: 1em;
+  }
+}
+
+.lst-entry-wrapper {
+  padding: 0 !important;
+  width: 100%;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-color: $entry-default;
+
+  &.online   { background-color: $online; }
+  &.enabled  { background-color: $online; }
+  &.offline  { background-color: $offline; }
+  &.disabled { background-color: $disabled; }
+
+  .lst-entry-title {
+    position: relative;
+    height: 5em;
+    padding: 0.75em;
+
+    color: #fff;
+    font-weight: bold;
+
+    > div.img {
+      float: left;
+      margin-right: 3%;
+      height: 50px;
+      width: 50px;
+
+      > img {
+        height: 50px;
+      }
+    }
+
+    .app-icon {
+      background-color: rgba(#fff, 0.85);
+      color: #393536;
+      overflow: hidden;
+      border-radius: 5px;
+
+      .shadow {
+        font-size: 35px;
+        padding-top: calc((100% - 35px)/2);
+        padding-left: calc((100% - 35px)/2);
+        text-align: center;
+        @include long-shadow(text, rgba(#b5bdb8, 0.94), 55, true, false)
+      }
+    }
+
+    > .user-label {
+      position: relative;
+      font-size: 120%;
+    }
+
+    > .label {
+      position: relative;
+      font-size: 75%;
+      color: inherit;
+      font-weight: normal;
+    }
+
+    > .badge {
+      color: $status;
+      font-size: 80%;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      position: absolute;
+      bottom: 10%;
+      right: 3%;
+    }
+  }
+
+  .lst-entry-body {
+    height: 4em;
+    background-color: #fdfdfd;
+    .metric {
+      margin-top: 4%;
+      border-right: $silver solid 1px;
+      text-align: center;
+
+      &.last {
+        border: none;
+      }
+
+      .metric-value {
+        //font-size: 110%;
+        color: $default;
+      }
+
+      .metric-label {
+        font-size: 65%;
+        color: $silver;
+        position: relative;
+      }
+    }
+  }
+
+  .detail-header {
+    position: relative;
+    margin: 0;
+
+    .title {
+      padding: 0 0 0.7em 2em;
+      color: #fff;
+
+      .label {
+        font-size: 2.5em;
+        font-weight: normal;
+        color: inherit;
+      }
+
+      .id {
+        color: inherit;
+      }
+    }
+
+    .actions {
+      position: absolute;
+      top: 13%;
+      right: 2%;
+      font-size: 1.5em;
+      color: #fff;
+      display: inline;
+
+      &>*:not(.modal) {
+        float: left;
+        margin: 0 0.25em;
+      }
+
+      i {
+        color: #fff;
+      }
+
+      .modal i {
+        color: inherit;
+      }
+    }
+
+    .status {
+      color: $status;
+      font-size: 92%;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      position: absolute;
+      bottom: 12%;
+      right: 3%;
+
+    }
+  }
+
+  .detail-attributes-full-view {
+    background-color: #fff;
+
+    $label-color: #b7b7b7;
+    $value-color: #000;
+    $title-color: #666;
+
+    .graphLarge {
+      background-color: #fff;
+
+      $title-height: 30px;
+      .title {
+        display: block;
+        width: 100%;
+        background-color: #eceff1;
+        padding: 3px;
+        height: $title-height;
+        font-size: 100%;
+      }
+
+      .contents {
+        padding: 0.4em;
+        height: calc(100% - #{$title-height});
+      }
+    }
+
+    .map {
+      padding: 0;
+      .leaflet-container {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .metric-card {
+      height: 23rem;
+      margin-bottom: 25px;
+    }
+  }
+
+  .detail-body-full-view {
+    margin: 0;
+    height: 22rem;
+    width: 100%;
+    padding: 1rem;
+    font-family: 'Open Sans', sans-serif;
+
+    $label-color: #b7b7b7;
+    $value-color: #000;
+    $title-color: #666;
+
+    .content {
+      height: 100%;
+      padding: 0;
+    }
+
+    .row {
+      margin: 0;
+    }
+
+    .metrics {
+      font-size: 130%;
+      margin-top: 2.5em;
+
+      .metric {
+        float: left;
+
+        span {
+          display: block;
+        }
+
+        .label { color: $label-color; }
+        .value { color: $value-color; }
+      }
+
+    }
+  }
+
+  .detail-body {
+    // background-color: #f3f3f3;
+    background-color: #fbfbfb;
+    margin: 0;
+    height: 22rem;
+    // height: 400px; // this makes me sad, but the map needs a fixed height parent
+    width: 100%;
+    padding: 1rem;
+    font-family: 'Open Sans', sans-serif;
+
+    $label-color: #b7b7b7;
+    $value-color: #000;
+    $title-color: #666;
+
+    .content {
+      height: 100%;
+      padding: 0;
+    }
+
+    .row {
+      margin: 0;
+    }
+
+    .img {
+      padding: 1.5em;
+      img {
+        height: 100%;
+        display: block;
+        margin: auto;
+      }
+    }
+
+    .metrics {
+      font-size: 80%;
+      margin-top: 1.5em;
+
+      .metric {
+        float: left;
+
+        span {
+          display: block;
+        }
+
+        .label { color: $label-color; }
+        .value { color: $value-color; }
+      }
+    }
+
+    .text-info {
+      ul {
+        margin: 0;
+
+        li {
+          display: block;
+          padding: .9rem 0;
+        }
+      }
+
+      span {
+        // display: block;
+        // float: left;
+        // width: 45%;
+        font-size: 85%;
+        padding: 0 0.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .title {
+        font-size: 1.5em;
+        color: $title-color;
+        // margin-bottom: 0.5rem;
+      }
+
+      .label {
+        color: #label-color;
+        text-align: right;
+      }
+
+      .value {
+        color: $value-color;
+        text-align: left;
+        // margin-left: 1em;
+      }
+    }
+
+    .graph {
+      background-color: #fff;
+      // height: 125px;
+      // padding: 0.2em;
+
+      $title-height: 25px;
+      .title {
+        display: block;
+        width: 100%;
+        background-color: #eceff1;
+        padding: 3px;
+        height: $title-height;
+        font-size: 80%;
+      }
+
+      .contents {
+        padding: 0.4em;
+        height: calc(100% - #{$title-height});
+      }
+    }
+
+    .graphLarge {
+      background-color: #fff;
+
+      $title-height: 30px;
+      .title {
+        display: block;
+        width: 100%;
+        background-color: #eceff1;
+        padding: 3px;
+        height: $title-height;
+        font-size: 100%;
+      }
+
+      .contents {
+        padding: 0.4em;
+        height: calc(100% - #{$title-height});
+      }
+    }
+
+    .map {
+      padding: 0;
+      .leaflet-container {
+        height: 20rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.tag {
+  float: left;
+
+
+  i.fa-tag {
+    font-size: 1.25em;
+    color: #757575;
+    margin-right: 0.5em;
+  }
+}
+
+.lst-entry .label {
+  color: #333;
+  font-weight: bold;
+  font-size: 100%;
+  padding: 0px 10px 0px 0px ;
+}
+
+.lst-entry .data {
+  padding: 0;
+  font-size: 90%;
+  color: #808080;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 1.5em;
+}
+
+.lst-entry .lst-line .lst-title {
+  color: #333;
+  font-size: 125%;
+  display: block;
+}
+
+.lst-line {
+  color: #333;
+}
+
+.lst-entry .timestamp {
+  color: #666;
+  font-size: 85%;
+}
+
+.debug .label {
+  color: #777;
+}
+
+.debug {
+  color: #777;
+  font-size: 75%;
+}
+
+.search-icon {
+  padding-top: 0.2em;
+}
+
+#newDeviceBtn {
+  position: fixed;
+  bottom: 1.5em;
+  right: 0px;
+  margin-right: 3em;
+}
+
+#newDeviceBtn span {
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 1.5em;
+  padding: 0.3em;
+  color: white;
+  text-align: center;
+}
+
+.switch.top-header {
+  margin-top:1.5em;
+}
+
+.switch.top-header label {
+  font-size: 1.5em;
+}
+
+.switch * .lever {
+  margin-bottom: 0.3em;
+}
+
+#newDeviceBtn .btn {
+  background-color: $teal;
+}
+
+.detailArea {
+  height: auto;
+  display: block;
+  margin-left: 30px !important;
+  margin-top: 20px !important;
+}
+
+.inline-actions {
+  position: relative;
+  top: 1%;
+}
+
+.inline-actions a {
+  margin: 0 0.5em;
+}
+
+.view {
+  margin-top: 50px;
+  background-color: $element-background-color;
+}
+
+.paddingElements {
+  padding: 20px;
+}
+
+.paddingLeft10px {
+  padding-left: 20px;
+}
+
+.align-list {
+  display: inline;
+}
+
+.align-list div{
+  margin-left: 15px;
+  float:left;
+}
+
+.btn-floating {
+  margin: 5px !important;
+}
+
+.pull-right {
+  margin-right: 25px;
+}
+
+.wrapping-list {
+  display: inline;
+}
+
+.wrapping-list div {
+  float: left;
+  margin-left: 2em;
+}
+
+#newDeviceForm .row {
+  margin-bottom: 1.2em;
+}
+
+.dropbox {
+  width: 100%;
+  height: 200px;
+  border-style: dashed;
+  border-color: $subtle;
+}
+
+.dropbox:hover {
+  border-color: $teal;
+}
+
+.dropbox-help {
+  margin-top: 13%;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: $subtle;
+}
+
+.padding-bottom {
+  padding-bottom: 1em;
+}
+
+.background-info {
+  color: $subtle;
+  font-size: 200%;
+  font-family: 'Cuprum', sans-serif;
+  text-align: center;
+
+  i.material-icons {
+    font-size: 5em;
+  }
+
+  &.padding10 {
+    padding-top: 10rem;
+  }
+
+  &.subtle {
+    font-size: 1.2em;
+  }
+}
+
+.lst-entry span .row {
+  margin-bottom: 0;
+}
+
+.lst-title input {
+  font-size: 1.5em !important;
+}
+
+.lst-entry.row {
+  transition: all .5s linear;
+}
+
+.lst-entry .icon {
+  font-size: 3em;
+  text-align: center;
+  height: 1em;
+}
+
+.lst-entry .icon img {
+  height: auto;
+  width: 100%;
+}
+
+.card {
+
+  .main {
+    margin-bottom: 1rem;
+  }
+
+  .label {
+    font-size: 65%;
+    color: $silver;
+    position: relative;
+  }
+
+  .value {
+    font-size: 110%;
+    color: $default;
+
+    &.title {
+      font-size: 170%;
+    }
+  }
+}
+
+.history-list {
+  .value {
+    font-size: 1.5em;
+  }
+  .label {
+    font-size: 0.75em;
+    text-align: right;
+  }
+  .alt-row {
+    background-color: $almost-white
+  }
+
+  .row {
+    padding: 0.3em;
+
+    .col {
+      padding: 0;
+    }
+  }
+}
+
+$action-area-width: 200px;
+
+.action-area {
+  height: 100%;
+  width: $action-area-width;
+  position: absolute;
+  right: 0;
+
+  .status {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.title-area {
+  width: calc(100% - #{$action-area-width});
+}

@@ -1,0 +1,237 @@
+@import '_overrides.scss';
+
+// this has actually been deprecated in favor of green/blue
+$matte: #414141;
+$fresh: #CCDFCB;
+$teal: #056571;
+$watermelon: #FF6a5c;
+$subtle: #9e9e9e;
+
+// this the new color scheme
+// blue
+$soft-blue: #598fe5;
+$almost-white: #fbfbfb;
+$almost-black: #666666;
+$gray:#f3f3f3;
+$dark-gray:#212121;
+$red :#f85252;
+$green: #16a085;
+$pink-like: #e02966;
+$ciano-like: #03c9a9;
+$ciano: #3da9bf;
+$bluewood: #2c3e50;
+$spruce: #3d505b;
+$shark: #1c2733;
+$white: #fff;
+$kashmir: #51779f;
+$kashmir-border: #436788;
+$cornflower: #a4c2f4;
+$default-blue: #588de7;
+// gray
+$porcelain: #ecf0f1;
+$silver: #b8b8b8;
+$dark-silver: #848484;
+$black: #2c3e50;
+$default: rgba(0, 0, 0, 0.87);
+// sidebar control variables
+$sidebar-width: 220px;
+$sidebar-width-closed: 50px;
+$sidebar-width-closed-large: 80px;
+$right-sidebar-width: 320px;
+$right-sidebar-margin: 50px;
+$sidebar-bg: #283339;
+// $sidebar-bg: #828485;
+$sidebar-bg-active: #03c9a9;
+$sidebar-fg-active: #a5fffa;
+$sidebar-main-ff: 'Open Sans', sans-serif;
+$sidebar-desc-ff: 'Roboto', sans-serif;
+$sidebar-desc: #bfbfbf;
+
+// header control variables
+$header-height: 45px;
+$page-header-size: 65px;
+
+// $app-background-color: #f3f3f3;
+$element-background-color: #fff;
+$details-background-color: #f3f3f3;
+// $main-font-family: Montserrat, sans-serif;
+$main-font-family: Roboto, sans-serif;
+
+
+.full-width {
+  position: relative;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.half-height {
+  height: 50%;
+}
+
+.auto-height {
+  height: auto !important;
+}
+
+body {
+  background-color: #fff;
+  font-family: $main-font-family;
+}
+
+// .fill {
+//   // This has to be placed within a relative container
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+// }
+
+.no-padding {
+  padding: 0;
+}
+
+.no-padding-left {
+  padding-left: 0 !important;
+}
+
+.paddingTop10 {
+  padding-top:10px !important;
+}
+
+.horizontal-spacer {
+  padding: 0 1.5em !important;
+}
+
+.line-normal {
+  line-height: normal !important;
+  height: auto !important;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-remove-attr-card {
+  font-size: 25px !important;
+  color: $red;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.full {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.horizontal-center {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.background-color-override {
+  background-color: none !important;
+}
+
+.w100p {
+  width: 100%;
+}
+
+.h100p {
+  height: 100%;
+}
+
+.pt20px {
+  padding-top: 20px !important;
+}
+
+.p0 {
+  padding:0px;
+}
+
+.mb20 {
+  margin-bottom:20px;
+}
+
+.mt10 {
+  margin-top:10px;
+}
+
+.todo-div {
+  font-family: 'Cuprum', sans-serif;
+}
+
+.box-shadow {
+  box-shadow: 0 3px 2px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.23);
+  margin-bottom: 4px;
+}
+
+
+.bg-gray {
+  background-color: $almost-white;
+}
+
+.scrollable {
+  overflow-y: scroll;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
+  .fill {
+    flex: 1;
+  }
+}
+
+.visible-overflow-y {
+  overflow-y: visible;
+}
+
+
+@import 'inputs';
+@import 'shadow';
+@import 'list';
+@import 'navbar';
+@import 'animations';
+@import 'sidebar';
+@import 'page';
+@import 'filter';
+@import 'fonts';
+@import 'materialIcons';
+@import 'login';
+@import 'user';
+@import 'flows';
+@import 'ddashboard';
+@import 'device';

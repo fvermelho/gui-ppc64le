@@ -1,0 +1,70 @@
+nav.outer-header {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  height: $header-height !important;
+  background: linear-gradient(to right, #588de7, #65ce8f);
+  font-family: Roboto, sans-serif;
+
+  a {
+    padding-left: 40px;
+    font-size: 35px;
+    margin-left: 0px;
+  }
+
+  .nav-status {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: $header-height;
+    display: inline;
+    line-height: $header-height;
+  }
+
+  .nav-status .status-icon {
+    font-size: 18pt;
+    line-height: $header-height;
+  }
+
+  .status-item {
+    margin: 0 0.2em;
+    float: left;
+  }
+}
+
+// TODO: this could (should) be on its own file (when user area gets refactored)
+$pic-border: #2969be;
+.user-pic {
+  border-radius: $header-height;
+  border: 3px solid $pic-border;
+  margin-top: 5px !important;
+  height: $header-height - 10px;
+  width: $header-height - 10px;
+  position: relative;
+}
+
+.user-pic img {
+  height: $header-height - 10 - 6;
+  margin: 0px;
+
+  position: absolute;
+  top: 0px;
+  left: 0px; // TODO: why is it 40px??
+
+  border-radius: $header-height;
+  border: 2px solid #fff;
+}
+
+.user-area {
+  padding-right: 2em;
+  display: inline;
+}
+
+.user-area * {
+  float: left;
+  margin: 0 0.3em;
+}
+
+.center-caret {
+  padding-top: 1em;
+}

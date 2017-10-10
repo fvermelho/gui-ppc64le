@@ -1,0 +1,54 @@
+
+@keyframes opacity-0-to-100 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.first-enter {
+  opacity: 0.01;
+}
+
+.first-enter.first-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.first-leave {
+  opacity: 1;
+}
+
+.first-leave.first-leave-active {
+  opacity: 0.001;
+  transition: opacity 500ms ease-in;
+}
+
+
+.first-appear {
+  opacity: 0.01 !important;
+}
+
+.first-appear.first-appear-active {
+  opacity: 1 !important;
+  transition: opacity 0.5s ease-in;
+}
+
+.resize-enter {
+  height: 10%;
+}
+
+.resize-enter.resize-enter-active {
+  height: 100%;
+  transition: height 500ms ease-in;
+}
+
+.expand {
+  transition: all .4s ease 0s;
+}

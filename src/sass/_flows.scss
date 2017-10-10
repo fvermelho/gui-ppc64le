@@ -1,0 +1,48 @@
+.flows-wrapper {
+  position: relative;
+  width: 100%;
+  height: calc(100% - #{$page-header-size});
+
+  @import 'red/style';
+
+  #main-container {
+    top: 0 !important;
+  }
+
+  #workspace {
+    right: 0;
+  }
+
+  #editor-stack {
+    right: 0;
+  }
+
+  #chart {
+    top: 0;
+    bottom: 0;
+  }
+
+  [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: initial;
+    opacity: initial;
+  }
+
+  .palette-scroll {
+    top: 0;
+  }
+
+  .leaflet-clickable {
+    cursor: pointer;
+  }
+
+  .leaflet-marker-pane .leaflet-clickable {
+    pointer-events: auto !important;
+  }
+
+  .leaflet-dragging .leaflet-container,
+  .leaflet-dragging .leaflet-clickable {
+    cursor: move;
+    cursor: -webkit-grabbing;
+    cursor:  -moz-grabbing;
+  }
+}

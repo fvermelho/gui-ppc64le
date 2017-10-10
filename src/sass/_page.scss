@@ -1,0 +1,103 @@
+
+.page-header {
+  height: $page-header-size;
+  background-color: $porcelain;
+  // position: relative;
+  padding-left: 4em;
+
+  .data {
+    height: 100%;
+    position: relative;
+  }
+
+  .title-area {
+    position: absolute;
+    top: 20%;
+    font-weight: bold;
+  }
+
+  .page-title {
+    // should be droid-sans
+    font-size: 105%;
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 6px;
+  }
+
+  .page-subtitle {
+    // should be open-sans
+    color: $soft-blue;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    position: relative;
+    top: -6px;
+  }
+
+  .page-actions {
+    // positioning only! (contents are defined by the component's children)
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 66%;
+    padding: 0.5em 2em;
+    display: inline;
+
+    > * {
+      float:right;
+    }
+
+    .btn {
+      font-size: 1rem;
+      padding: 0 0.5rem;
+      margin-left: 1rem;
+      line-height: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+}
+
+.inner-header {
+  position: absolute;
+  width: 100%;
+  height: $page-header-size;
+  padding: 15px 30px;
+  background-color: #fff;
+
+  z-index: 900;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+
+  .title {
+    font-size: 1.3em;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .actions {
+    position: absolute;;
+    right: 20px;
+    bottom: 10px;
+    font-size: 1.5em;
+
+    .btn {
+      font-size: 1rem;
+      padding: 0 0.5rem;
+      margin-left: 1rem;
+      line-height: 1.8rem;
+      height: 1.7rem;
+    }
+
+    i {
+      color: $dark-silver;
+      margin: 0 0.3em;
+    }
+  }
+}
+
+.inner-header-placeholder {
+  position: relative;
+  height: $page-header-size;
+}
+
+.inner-content {
+  position: relative;
+  // offsets the positioning of the inner header (has to be absolute for the shadow effect)
+  top: $page-header-size;
+}

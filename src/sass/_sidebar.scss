@@ -1,0 +1,271 @@
+.open .sidebar {
+  width: $sidebar-width;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 1.14), 0 6px 30px 5px rgba(0, 0, 0, 0.5), 0 8px 10px -5px rgba(0, 0, 0, 0.5)
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: $sidebar-width-closed;
+  height: calc(100% - #{$header-height});
+  margin-top: $header-height;
+  border-right: 1px solid #c1c1c1 !important;
+  color: #fff;
+  background-color: $sidebar-bg;
+
+    // li:hover a{
+    //     border:0px;
+    //
+    // }
+    // li:hover a:hover{
+    //     border:0px;
+    // }
+
+
+  .header {
+    color: #ccc; // TODO add this to color scheme
+    height: $header-height;
+
+    >span {
+      line-height: $header-height;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      padding-left: 10px;
+      font-size: 80%;
+    }
+
+    .action {
+      position: absolute;
+      width: $header-height;
+      height: $header-height;
+      right: 0;
+    }
+
+    >div>i {
+      position: absolute;
+      right: 7.5px;
+      bottom: 7.5px;
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+
+  .sidebar-nav {
+    background: none; // override materialize
+    box-shadow: none; // override materialize
+
+    .nav-item {
+      width: 100%;
+
+      .nav-link {
+        position: relative;
+        padding: 10px 10px;
+        border-left: 2px solid $silver;
+        margin-top: 2px;
+        min-height: 54px;
+        transition: all .2s;
+
+        &:hover {
+          background-color: $shark;
+          border-left: 4px solid #828485; // TODO add this to palette
+        }
+      }
+
+      > .nav-link.active {
+        background-color: $sidebar-bg-active;
+        color: #fff;
+        border-left: 4px solid #2ea9b0; // TODO add this to palette
+        // border-color: #2ea9b0;
+
+        .nav-desc {
+          color: #fff;
+        }
+      }
+    }
+
+    .nav-icon {
+      position: absolute;
+      top: 25%;
+      right: 0;
+      width: $sidebar-width-closed;
+      text-align: center;
+      display: block;
+      font-size: 1.6em;
+
+      i {
+        position: absolute;
+        right: 0;
+        width: 100%
+      }
+
+      i.material-icons {
+        font-size: inherit;
+        line-height: normal;
+        height: auto;
+        font-size: 125%;
+      }
+    }
+
+    .nav-title {
+      font-size: 9pt;
+      font-weight: bold;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    .nav-desc {
+      font-size:  7pt;
+      margin: 0 0;
+      padding: 0.2em 0;
+      color: $sidebar-desc;
+    }
+
+    .nav-2nd {
+      > li {
+        width: 100%;
+      }
+    }
+
+    .nav-2nd-item {
+      padding: 1.5em 0;
+      padding-left: 15px;
+      width: 100%;
+
+      &:hover {
+        background-color: $shark;
+      }
+
+      span {
+        padding-left: 1em;
+      }
+    }
+
+    .nav-2nd-item:before {
+      font-family: 'FontAwesome';
+      content: '\f0da';
+      margin:0;
+      color: #ccc;
+    }
+
+    .nav-2nd-item, .nav-2nd-item * {
+      line-height: normal;
+      height: auto;
+      font-size: 8pt;
+      font-weight: bold;
+    }
+
+    .nav-2nd-item a {
+      display: inline-block;
+      padding-left: 12px;
+    }
+
+    // .nav-2nd-item.active {
+    //   color: $sidebar-fg-active;
+    // }
+
+    .nav-2nd-item.active {
+      color: $sidebar-fg-active;
+    }
+
+    .nav-2nd-item.active:before {
+      color: $sidebar-fg-active;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 5px;
+    width: 100%;
+
+    img {
+      width: 80%;
+      margin: auto;
+      display: block;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+.content {
+  padding-left: $sidebar-width-closed;
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: $header-height;
+}
+
+.open .content {
+  padding-left: $sidebar-width-closed;
+}
+
+.rightsidebar {
+  left: 0;
+  top: #{$header-height};
+  width: 100%;
+  height: calc(100% - #{$header-height});
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.rightsidebarchild {
+  position: fixed;
+  left: calc(100% - #{$right-sidebar-width});
+  top: 0;
+  z-index: 999;
+  width: $right-sidebar-width;
+  height: calc(100% - #{$header-height});
+  margin-top: $header-height;
+  color: #fff;
+  background-color: $sidebar-bg;
+  box-shadow:  0 8px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (min-width: 601px) {
+  .sidebar {
+    width: $sidebar-width-closed-large;
+    box-shadow: none;
+  }
+
+  .open .sidebar {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    // Just to check if would be better use shadow;
+    // box-shadow: none;
+  }
+
+  .content {
+    padding-left: $sidebar-width-closed-large;
+  }
+
+  .open .content {
+    padding-left: $sidebar-width;
+  }
+
+  .closed .sidebar .nav-link {
+    min-height: $sidebar-width-closed-large;
+  }
+
+  .closed .sidebar .sidebar-nav {
+    .nav-title {
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 7pt;
+    }
+
+    .nav-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 160%;
+      padding-top: 10%;
+    }
+  }
+}
